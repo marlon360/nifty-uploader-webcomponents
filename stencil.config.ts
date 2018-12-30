@@ -9,8 +9,5 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null // disable service workers
     }
-  ],
-  copy: [
-    { src: '../node_modules/nifty-uploader/lib/nifty-uploader.js', dest: 'scripts/nifty-uploader.js' }
   ]
 };

@@ -11,6 +11,9 @@ import '@stencil/core';
 import {
   NiftyUploader,
 } from 'nifty-uploader';
+import {
+  INiftyOptionsParameter,
+} from 'nifty-uploader/lib/types/NiftyOptions';
 
 
 export namespace Components {
@@ -29,10 +32,10 @@ export namespace Components {
   }
 
   interface NuUploader {
-    'uploader': NiftyUploader;
+    'options': INiftyOptionsParameter;
   }
   interface NuUploaderAttributes extends StencilHTMLAttributes {
-    'uploader'?: NiftyUploader;
+    'options'?: INiftyOptionsParameter;
   }
 }
 

@@ -1,5 +1,6 @@
 import { Component, Prop, Element } from '@stencil/core';
 import { NiftyUploader } from 'nifty-uploader';
+import { INiftyOptionsParameter } from 'nifty-uploader/lib/types/NiftyOptions';
 
 
 @Component({
@@ -9,13 +10,13 @@ import { NiftyUploader } from 'nifty-uploader';
 })
 export class Uploader {
 
-
-  @Prop() uploader: NiftyUploader;
-
   @Element() el!: HTMLStencilElement;
 
-  refresh() {
-      this.el.forceUpdate();
+  @Prop() options: INiftyOptionsParameter;
+  uploader: NiftyUploader;
+
+  componentWillLoad() {
+    this.uploader = new NiftyUploader(this.options);
   }
 
   componentDidLoad() {
@@ -23,6 +24,10 @@ export class Uploader {
       this.refresh();
     })
   }
+
+  private refresh() {
+    this.el.forceUpdate();
+}
 
   render() {
     return <div>
