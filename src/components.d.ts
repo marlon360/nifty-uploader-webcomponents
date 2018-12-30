@@ -33,9 +33,11 @@ export namespace Components {
 
   interface NuUploader {
     'options': INiftyOptionsParameter;
+    'uploader': NiftyUploader;
   }
   interface NuUploaderAttributes extends StencilHTMLAttributes {
     'options'?: INiftyOptionsParameter;
+    'uploader'?: NiftyUploader;
   }
 }
 

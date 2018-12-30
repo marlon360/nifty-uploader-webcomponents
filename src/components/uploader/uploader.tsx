@@ -13,10 +13,12 @@ export class Uploader {
   @Element() el!: HTMLStencilElement;
 
   @Prop() options: INiftyOptionsParameter;
-  uploader: NiftyUploader;
+  @Prop({ mutable: true }) uploader: NiftyUploader;
 
   componentWillLoad() {
-    this.uploader = new NiftyUploader(this.options);
+    if (!this.uploader) {
+      this.uploader = new NiftyUploader(this.options);
+    }
   }
 
   componentDidLoad() {
@@ -27,7 +29,7 @@ export class Uploader {
 
   private refresh() {
     this.el.forceUpdate();
-}
+  }
 
   render() {
     return <div>
