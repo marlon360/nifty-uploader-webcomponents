@@ -38,6 +38,7 @@ export class Uploader {
         <div>
           <nifty-filename file={file} ></nifty-filename>
           <nifty-filesize file={file}></nifty-filesize>
+          <nifty-cancel-button file={file}>Cancel</nifty-cancel-button>
         </div>
       )}
     </div>;

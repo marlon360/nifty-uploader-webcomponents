@@ -37,6 +37,13 @@ export namespace Components {
     'uploader'?: NiftyUploader;
   }
 
+  interface NiftyCancelButton {
+    'file': NiftyFile;
+  }
+  interface NiftyCancelButtonAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+  }
+
   interface NiftyFilename {
     'file': NiftyFile;
   }
@@ -66,6 +73,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'NiftyAddButton': Components.NiftyAddButton;
+    'NiftyCancelButton': Components.NiftyCancelButton;
     'NiftyFilename': Components.NiftyFilename;
     'NiftyFilesize': Components.NiftyFilesize;
     'NuUploader': Components.NuUploader;
@@ -73,6 +81,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'nifty-add-button': Components.NiftyAddButtonAttributes;
+    'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
     'nifty-filesize': Components.NiftyFilesizeAttributes;
     'nu-uploader': Components.NuUploaderAttributes;
@@ -83,6 +92,12 @@ declare global {
   var HTMLNiftyAddButtonElement: {
     prototype: HTMLNiftyAddButtonElement;
     new (): HTMLNiftyAddButtonElement;
+  };
+
+  interface HTMLNiftyCancelButtonElement extends Components.NiftyCancelButton, HTMLStencilElement {}
+  var HTMLNiftyCancelButtonElement: {
+    prototype: HTMLNiftyCancelButtonElement;
+    new (): HTMLNiftyCancelButtonElement;
   };
 
   interface HTMLNiftyFilenameElement extends Components.NiftyFilename, HTMLStencilElement {}
@@ -105,6 +120,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
+    'nifty-cancel-button': HTMLNiftyCancelButtonElement
     'nifty-filename': HTMLNiftyFilenameElement
     'nifty-filesize': HTMLNiftyFilesizeElement
     'nu-uploader': HTMLNuUploaderElement
@@ -112,6 +128,7 @@ declare global {
 
   interface ElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement;
+    'nifty-cancel-button': HTMLNiftyCancelButtonElement;
     'nifty-filename': HTMLNiftyFilenameElement;
     'nifty-filesize': HTMLNiftyFilesizeElement;
     'nu-uploader': HTMLNuUploaderElement;
