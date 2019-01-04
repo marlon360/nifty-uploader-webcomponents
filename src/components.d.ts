@@ -18,6 +18,9 @@ import {
   Units,
 } from './components/filesize/Units';
 import {
+  StatusText,
+} from './components/status/StatusText';
+import {
   INiftyOptionsParameter,
 } from 'nifty-uploader/lib/types/NiftyOptions';
 
@@ -60,6 +63,15 @@ export namespace Components {
     'units'?: Units;
   }
 
+  interface NiftyStatus {
+    'file': NiftyFile;
+    'statusText': StatusText;
+  }
+  interface NiftyStatusAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+    'statusText'?: StatusText;
+  }
+
   interface NuUploader {
     'options': INiftyOptionsParameter;
     'uploader': NiftyUploader;
@@ -76,6 +88,7 @@ declare global {
     'NiftyCancelButton': Components.NiftyCancelButton;
     'NiftyFilename': Components.NiftyFilename;
     'NiftyFilesize': Components.NiftyFilesize;
+    'NiftyStatus': Components.NiftyStatus;
     'NuUploader': Components.NuUploader;
   }
 
@@ -84,6 +97,7 @@ declare global {
     'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
     'nifty-filesize': Components.NiftyFilesizeAttributes;
+    'nifty-status': Components.NiftyStatusAttributes;
     'nu-uploader': Components.NuUploaderAttributes;
   }
 
@@ -112,6 +126,12 @@ declare global {
     new (): HTMLNiftyFilesizeElement;
   };
 
+  interface HTMLNiftyStatusElement extends Components.NiftyStatus, HTMLStencilElement {}
+  var HTMLNiftyStatusElement: {
+    prototype: HTMLNiftyStatusElement;
+    new (): HTMLNiftyStatusElement;
+  };
+
   interface HTMLNuUploaderElement extends Components.NuUploader, HTMLStencilElement {}
   var HTMLNuUploaderElement: {
     prototype: HTMLNuUploaderElement;
@@ -123,6 +143,7 @@ declare global {
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
     'nifty-filename': HTMLNiftyFilenameElement
     'nifty-filesize': HTMLNiftyFilesizeElement
+    'nifty-status': HTMLNiftyStatusElement
     'nu-uploader': HTMLNuUploaderElement
   }
 
@@ -131,6 +152,7 @@ declare global {
     'nifty-cancel-button': HTMLNiftyCancelButtonElement;
     'nifty-filename': HTMLNiftyFilenameElement;
     'nifty-filesize': HTMLNiftyFilesizeElement;
+    'nifty-status': HTMLNiftyStatusElement;
     'nu-uploader': HTMLNuUploaderElement;
   }
 
