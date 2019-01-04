@@ -37,7 +37,7 @@ export class Uploader {
       {this.uploader.files.map((file) =>
         <div>
           <nifty-filename file={file} ></nifty-filename>
-          <div>{file.size}</div>
+          <nifty-filesize file={file}></nifty-filesize>
         </div>
       )}
     </div>;

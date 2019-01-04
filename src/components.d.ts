@@ -15,6 +15,9 @@ import {
   NiftyFile,
 } from 'nifty-uploader/lib/types/NiftyFile';
 import {
+  Units,
+} from './components/filesize/Units';
+import {
   INiftyOptionsParameter,
 } from 'nifty-uploader/lib/types/NiftyOptions';
 
@@ -41,6 +44,15 @@ export namespace Components {
     'file'?: NiftyFile;
   }
 
+  interface NiftyFilesize {
+    'file': NiftyFile;
+    'units': Units;
+  }
+  interface NiftyFilesizeAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+    'units'?: Units;
+  }
+
   interface NuUploader {
     'options': INiftyOptionsParameter;
     'uploader': NiftyUploader;
@@ -55,12 +67,14 @@ declare global {
   interface StencilElementInterfaces {
     'NiftyAddButton': Components.NiftyAddButton;
     'NiftyFilename': Components.NiftyFilename;
+    'NiftyFilesize': Components.NiftyFilesize;
     'NuUploader': Components.NuUploader;
   }
 
   interface StencilIntrinsicElements {
     'nifty-add-button': Components.NiftyAddButtonAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
+    'nifty-filesize': Components.NiftyFilesizeAttributes;
     'nu-uploader': Components.NuUploaderAttributes;
   }
 
@@ -77,6 +91,12 @@ declare global {
     new (): HTMLNiftyFilenameElement;
   };
 
+  interface HTMLNiftyFilesizeElement extends Components.NiftyFilesize, HTMLStencilElement {}
+  var HTMLNiftyFilesizeElement: {
+    prototype: HTMLNiftyFilesizeElement;
+    new (): HTMLNiftyFilesizeElement;
+  };
+
   interface HTMLNuUploaderElement extends Components.NuUploader, HTMLStencilElement {}
   var HTMLNuUploaderElement: {
     prototype: HTMLNuUploaderElement;
@@ -86,12 +106,14 @@ declare global {
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
     'nifty-filename': HTMLNiftyFilenameElement
+    'nifty-filesize': HTMLNiftyFilesizeElement
     'nu-uploader': HTMLNuUploaderElement
   }
 
   interface ElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement;
     'nifty-filename': HTMLNiftyFilenameElement;
+    'nifty-filesize': HTMLNiftyFilesizeElement;
     'nu-uploader': HTMLNuUploaderElement;
   }
 
