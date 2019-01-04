@@ -4,11 +4,11 @@ import { INiftyOptionsParameter } from 'nifty-uploader/lib/types/NiftyOptions';
 
 
 @Component({
-  tag: 'nu-uploader',
-  styleUrl: 'uploader.css',
+  tag: 'nifty-gallery',
+  styleUrl: 'gallery.css',
   shadow: true
 })
-export class Uploader {
+export class Gallery {
 
   @Element() el!: HTMLStencilElement;
 

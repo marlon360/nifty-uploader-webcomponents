@@ -18,11 +18,11 @@ import {
   Units,
 } from './components/filesize/Units';
 import {
-  StatusText,
-} from './components/status/StatusText';
-import {
   INiftyOptionsParameter,
 } from 'nifty-uploader/lib/types/NiftyOptions';
+import {
+  StatusText,
+} from './components/status/StatusText';
 
 
 export namespace Components {
@@ -63,6 +63,15 @@ export namespace Components {
     'units'?: Units;
   }
 
+  interface NiftyGallery {
+    'options': INiftyOptionsParameter;
+    'uploader': NiftyUploader;
+  }
+  interface NiftyGalleryAttributes extends StencilHTMLAttributes {
+    'options'?: INiftyOptionsParameter;
+    'uploader'?: NiftyUploader;
+  }
+
   interface NiftyStatus {
     'file': NiftyFile;
     'statusText': StatusText;
@@ -70,15 +79,6 @@ export namespace Components {
   interface NiftyStatusAttributes extends StencilHTMLAttributes {
     'file'?: NiftyFile;
     'statusText'?: StatusText;
-  }
-
-  interface NuUploader {
-    'options': INiftyOptionsParameter;
-    'uploader': NiftyUploader;
-  }
-  interface NuUploaderAttributes extends StencilHTMLAttributes {
-    'options'?: INiftyOptionsParameter;
-    'uploader'?: NiftyUploader;
   }
 }
 
@@ -88,8 +88,8 @@ declare global {
     'NiftyCancelButton': Components.NiftyCancelButton;
     'NiftyFilename': Components.NiftyFilename;
     'NiftyFilesize': Components.NiftyFilesize;
+    'NiftyGallery': Components.NiftyGallery;
     'NiftyStatus': Components.NiftyStatus;
-    'NuUploader': Components.NuUploader;
   }
 
   interface StencilIntrinsicElements {
@@ -97,8 +97,8 @@ declare global {
     'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
     'nifty-filesize': Components.NiftyFilesizeAttributes;
+    'nifty-gallery': Components.NiftyGalleryAttributes;
     'nifty-status': Components.NiftyStatusAttributes;
-    'nu-uploader': Components.NuUploaderAttributes;
   }
 
 
@@ -126,16 +126,16 @@ declare global {
     new (): HTMLNiftyFilesizeElement;
   };
 
+  interface HTMLNiftyGalleryElement extends Components.NiftyGallery, HTMLStencilElement {}
+  var HTMLNiftyGalleryElement: {
+    prototype: HTMLNiftyGalleryElement;
+    new (): HTMLNiftyGalleryElement;
+  };
+
   interface HTMLNiftyStatusElement extends Components.NiftyStatus, HTMLStencilElement {}
   var HTMLNiftyStatusElement: {
     prototype: HTMLNiftyStatusElement;
     new (): HTMLNiftyStatusElement;
-  };
-
-  interface HTMLNuUploaderElement extends Components.NuUploader, HTMLStencilElement {}
-  var HTMLNuUploaderElement: {
-    prototype: HTMLNuUploaderElement;
-    new (): HTMLNuUploaderElement;
   };
 
   interface HTMLElementTagNameMap {
@@ -143,8 +143,8 @@ declare global {
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
     'nifty-filename': HTMLNiftyFilenameElement
     'nifty-filesize': HTMLNiftyFilesizeElement
+    'nifty-gallery': HTMLNiftyGalleryElement
     'nifty-status': HTMLNiftyStatusElement
-    'nu-uploader': HTMLNuUploaderElement
   }
 
   interface ElementTagNameMap {
@@ -152,8 +152,8 @@ declare global {
     'nifty-cancel-button': HTMLNiftyCancelButtonElement;
     'nifty-filename': HTMLNiftyFilenameElement;
     'nifty-filesize': HTMLNiftyFilesizeElement;
+    'nifty-gallery': HTMLNiftyGalleryElement;
     'nifty-status': HTMLNiftyStatusElement;
-    'nu-uploader': HTMLNuUploaderElement;
   }
 
 
