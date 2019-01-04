@@ -36,7 +36,7 @@ export class Uploader {
       <nifty-add-button uploader={this.uploader} />
       {this.uploader.files.map((file) =>
         <div>
-          <div>{file.name}</div>
+          <nifty-filename file={file} ></nifty-filename>
           <div>{file.size}</div>
         </div>
       )}

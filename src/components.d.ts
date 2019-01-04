@@ -12,6 +12,9 @@ import {
   NiftyUploader,
 } from 'nifty-uploader';
 import {
+  NiftyFile,
+} from 'nifty-uploader/lib/types/NiftyFile';
+import {
   INiftyOptionsParameter,
 } from 'nifty-uploader/lib/types/NiftyOptions';
 
@@ -31,6 +34,13 @@ export namespace Components {
     'uploader'?: NiftyUploader;
   }
 
+  interface NiftyFilename {
+    'file': NiftyFile;
+  }
+  interface NiftyFilenameAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+  }
+
   interface NuUploader {
     'options': INiftyOptionsParameter;
     'uploader': NiftyUploader;
@@ -44,11 +54,13 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'NiftyAddButton': Components.NiftyAddButton;
+    'NiftyFilename': Components.NiftyFilename;
     'NuUploader': Components.NuUploader;
   }
 
   interface StencilIntrinsicElements {
     'nifty-add-button': Components.NiftyAddButtonAttributes;
+    'nifty-filename': Components.NiftyFilenameAttributes;
     'nu-uploader': Components.NuUploaderAttributes;
   }
 
@@ -59,6 +71,12 @@ declare global {
     new (): HTMLNiftyAddButtonElement;
   };
 
+  interface HTMLNiftyFilenameElement extends Components.NiftyFilename, HTMLStencilElement {}
+  var HTMLNiftyFilenameElement: {
+    prototype: HTMLNiftyFilenameElement;
+    new (): HTMLNiftyFilenameElement;
+  };
+
   interface HTMLNuUploaderElement extends Components.NuUploader, HTMLStencilElement {}
   var HTMLNuUploaderElement: {
     prototype: HTMLNuUploaderElement;
@@ -67,11 +85,13 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
+    'nifty-filename': HTMLNiftyFilenameElement
     'nu-uploader': HTMLNuUploaderElement
   }
 
   interface ElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement;
+    'nifty-filename': HTMLNiftyFilenameElement;
     'nu-uploader': HTMLNuUploaderElement;
   }
 
