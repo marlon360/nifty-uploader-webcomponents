@@ -21,7 +21,7 @@ export class AddButton {
     input.type = 'file';
     input.onchange = () => {
       console.log("added file");
-      this.uploader.addFile(input.files[0])
+      this.uploader.addFiles(input.files)
       input.remove();
     }
     input.click();
