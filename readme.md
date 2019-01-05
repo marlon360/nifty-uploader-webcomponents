@@ -6,7 +6,7 @@
 
 ### Script tag
 
-- Put the script tag `<script src='https://unpkg.com/nifty-uploader-webcomponents/dist/niftyuploader.js'></script>` in the head of your index.html
+- Put the script tag `<script src='https://unpkg.com/nifty-uploader-webcomponents'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
