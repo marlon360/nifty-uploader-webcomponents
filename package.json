@@ -1,10 +1,9 @@
 {
   "name": "nifty-uploader-webcomponents",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Webcomponents for nifty-uploader",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
-  "unpkg": "dist/ionic.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
