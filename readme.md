@@ -13,3 +13,45 @@
 - Run `npm install nifty-uploader-webcomponents --save`
 - Put the script tag `<script src='node_modules/nifty-uploader-webcomponents/dist/niftyuploader.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
+
+### Angular
+- Run `npm install nifty-uploader-webcomponents --save`
+- Include the `CUSTOM_ELEMENTS_SCHEMA` in the modules that use the components
+- Call `defineCustomElements(window)` from `main.ts` (or some other appropriate place)
+
+module.ts:
+```js
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, SharedModule],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+```
+main.ts:
+```js
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+import { defineCustomElements } from 'nifty-uploader-webcomponents/dist/loader'
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+
+defineCustomElements(window);
+```
