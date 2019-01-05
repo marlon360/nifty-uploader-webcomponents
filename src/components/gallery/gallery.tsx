@@ -33,17 +33,19 @@ export class Gallery {
 
   render() {
     return <div>
-      <nifty-add-button uploader={this.uploader} />
-      {this.uploader.files.map((file) =>
-        <div>
-          <nifty-filename file={file} ></nifty-filename>
-          <nifty-filesize file={file}></nifty-filesize>
-          <nifty-cancel-button file={file}></nifty-cancel-button>
-          <nifty-status file={file}></nifty-status>
-          <nifty-progress-bar uploader={this.uploader} file={file}></nifty-progress-bar>
-        </div>
-      )}
-      <nifty-progress-bar uploader={this.uploader}></nifty-progress-bar>
+      <nifty-drop-zone class="nifty-gallery-drop-zone" uploader={this.uploader}>
+        <nifty-add-button uploader={this.uploader} />
+        <nifty-progress-bar hideBeforeStart={true} hideOnComplete={true} uploader={this.uploader} />
+        {this.uploader.files.map((file) =>
+          <div>
+            <nifty-filename file={file} />
+            <nifty-filesize file={file} />
+            <nifty-cancel-button file={file} />
+            <nifty-status file={file} />
+            <nifty-progress-bar uploader={this.uploader} file={file} />
+          </div>
+        )}
+      </nifty-drop-zone>
     </div>;
   }
 }

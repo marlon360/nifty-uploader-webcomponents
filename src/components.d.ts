@@ -47,6 +47,13 @@ export namespace Components {
     'file'?: NiftyFile;
   }
 
+  interface NiftyDropZone {
+    'uploader': NiftyUploader;
+  }
+  interface NiftyDropZoneAttributes extends StencilHTMLAttributes {
+    'uploader'?: NiftyUploader;
+  }
+
   interface NiftyFilename {
     'file': NiftyFile;
   }
@@ -99,6 +106,7 @@ declare global {
   interface StencilElementInterfaces {
     'NiftyAddButton': Components.NiftyAddButton;
     'NiftyCancelButton': Components.NiftyCancelButton;
+    'NiftyDropZone': Components.NiftyDropZone;
     'NiftyFilename': Components.NiftyFilename;
     'NiftyFilesize': Components.NiftyFilesize;
     'NiftyGallery': Components.NiftyGallery;
@@ -109,6 +117,7 @@ declare global {
   interface StencilIntrinsicElements {
     'nifty-add-button': Components.NiftyAddButtonAttributes;
     'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
+    'nifty-drop-zone': Components.NiftyDropZoneAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
     'nifty-filesize': Components.NiftyFilesizeAttributes;
     'nifty-gallery': Components.NiftyGalleryAttributes;
@@ -127,6 +136,12 @@ declare global {
   var HTMLNiftyCancelButtonElement: {
     prototype: HTMLNiftyCancelButtonElement;
     new (): HTMLNiftyCancelButtonElement;
+  };
+
+  interface HTMLNiftyDropZoneElement extends Components.NiftyDropZone, HTMLStencilElement {}
+  var HTMLNiftyDropZoneElement: {
+    prototype: HTMLNiftyDropZoneElement;
+    new (): HTMLNiftyDropZoneElement;
   };
 
   interface HTMLNiftyFilenameElement extends Components.NiftyFilename, HTMLStencilElement {}
@@ -162,6 +177,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
+    'nifty-drop-zone': HTMLNiftyDropZoneElement
     'nifty-filename': HTMLNiftyFilenameElement
     'nifty-filesize': HTMLNiftyFilesizeElement
     'nifty-gallery': HTMLNiftyGalleryElement
@@ -172,6 +188,7 @@ declare global {
   interface ElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement;
     'nifty-cancel-button': HTMLNiftyCancelButtonElement;
+    'nifty-drop-zone': HTMLNiftyDropZoneElement;
     'nifty-filename': HTMLNiftyFilenameElement;
     'nifty-filesize': HTMLNiftyFilesizeElement;
     'nifty-gallery': HTMLNiftyGalleryElement;

@@ -5,3 +5,16 @@
 .nifty-progress-bar {
     background: rgb(61, 226, 61);
 }
+
+.nifty-gallery-drop-zone {
+    display: block;
+    border-radius: 6px;
+    background-color: #FAFAFA;
+    max-height: 500px;
+    min-height: 300px;
+    overflow-y: hidden;
+    padding: 1em;
+    position: relative;
+
+    border: 3px dashed rgb(48, 154, 240);
+}
