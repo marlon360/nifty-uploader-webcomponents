@@ -21,5 +21,6 @@
   "devDependencies": {
     "@stencil/core": "~0.16.1"
   },
+  "author": "Marlon Lückert",
   "license": "MIT"
 }
