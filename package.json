@@ -4,6 +4,7 @@
   "description": "Webcomponents for nifty-uploader",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
+  "unpkg": "dist/niftyuploader.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
