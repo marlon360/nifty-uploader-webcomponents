@@ -72,6 +72,19 @@ export namespace Components {
     'uploader'?: NiftyUploader;
   }
 
+  interface NiftyProgressBar {
+    'file': NiftyFile;
+    'hideBeforeStart': boolean;
+    'hideOnComplete': boolean;
+    'uploader': NiftyUploader;
+  }
+  interface NiftyProgressBarAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+    'hideBeforeStart'?: boolean;
+    'hideOnComplete'?: boolean;
+    'uploader'?: NiftyUploader;
+  }
+
   interface NiftyStatus {
     'file': NiftyFile;
     'statusText': StatusText;
@@ -89,6 +102,7 @@ declare global {
     'NiftyFilename': Components.NiftyFilename;
     'NiftyFilesize': Components.NiftyFilesize;
     'NiftyGallery': Components.NiftyGallery;
+    'NiftyProgressBar': Components.NiftyProgressBar;
     'NiftyStatus': Components.NiftyStatus;
   }
 
@@ -98,6 +112,7 @@ declare global {
     'nifty-filename': Components.NiftyFilenameAttributes;
     'nifty-filesize': Components.NiftyFilesizeAttributes;
     'nifty-gallery': Components.NiftyGalleryAttributes;
+    'nifty-progress-bar': Components.NiftyProgressBarAttributes;
     'nifty-status': Components.NiftyStatusAttributes;
   }
 
@@ -132,6 +147,12 @@ declare global {
     new (): HTMLNiftyGalleryElement;
   };
 
+  interface HTMLNiftyProgressBarElement extends Components.NiftyProgressBar, HTMLStencilElement {}
+  var HTMLNiftyProgressBarElement: {
+    prototype: HTMLNiftyProgressBarElement;
+    new (): HTMLNiftyProgressBarElement;
+  };
+
   interface HTMLNiftyStatusElement extends Components.NiftyStatus, HTMLStencilElement {}
   var HTMLNiftyStatusElement: {
     prototype: HTMLNiftyStatusElement;
@@ -144,6 +165,7 @@ declare global {
     'nifty-filename': HTMLNiftyFilenameElement
     'nifty-filesize': HTMLNiftyFilesizeElement
     'nifty-gallery': HTMLNiftyGalleryElement
+    'nifty-progress-bar': HTMLNiftyProgressBarElement
     'nifty-status': HTMLNiftyStatusElement
   }
 
@@ -153,6 +175,7 @@ declare global {
     'nifty-filename': HTMLNiftyFilenameElement;
     'nifty-filesize': HTMLNiftyFilesizeElement;
     'nifty-gallery': HTMLNiftyGalleryElement;
+    'nifty-progress-bar': HTMLNiftyProgressBarElement;
     'nifty-status': HTMLNiftyStatusElement;
   }
 

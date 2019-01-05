@@ -6,7 +6,7 @@ import { INiftyOptionsParameter } from 'nifty-uploader/lib/types/NiftyOptions';
 @Component({
   tag: 'nifty-gallery',
   styleUrl: 'gallery.css',
-  shadow: true
+  shadow: false
 })
 export class Gallery {
 
@@ -40,8 +40,10 @@ export class Gallery {
           <nifty-filesize file={file}></nifty-filesize>
           <nifty-cancel-button file={file}></nifty-cancel-button>
           <nifty-status file={file}></nifty-status>
+          <nifty-progress-bar uploader={this.uploader} file={file}></nifty-progress-bar>
         </div>
       )}
+      <nifty-progress-bar uploader={this.uploader}></nifty-progress-bar>
     </div>;
   }
 }

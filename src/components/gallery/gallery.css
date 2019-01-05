@@ -1,1 +1,7 @@
-
+.nifty-progress-bar-wrapper {
+    height: 10px;
+    width: 100px;
+}
+.nifty-progress-bar {
+    background: rgb(61, 226, 61);
+}
