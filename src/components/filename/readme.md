@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type        | Default     |
-| -------- | --------- | ----------- | ----------- | ----------- |
-| `file`   | --        |             | `NiftyFile` | `undefined` |
+| Property   | Attribute   | Description | Type     | Default     |
+| ---------- | ----------- | ----------- | -------- | ----------- |
+| `fileName` | `file-name` |             | `string` | `undefined` |
 
 
 ----------------------------------------------

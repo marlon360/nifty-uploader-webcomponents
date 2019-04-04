@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type        | Default     |
-| -------- | --------- | ----------- | ----------- | ----------- |
-| `file`   | --        |             | `NiftyFile` | `undefined` |
-| `units`  | --        |             | `Units`     | `undefined` |
+| Property   | Attribute   | Description | Type     | Default     |
+| ---------- | ----------- | ----------- | -------- | ----------- |
+| `fileSize` | `file-size` |             | `number` | `undefined` |
+| `units`    | --          |             | `Units`  | `undefined` |
 
 
 ----------------------------------------------
