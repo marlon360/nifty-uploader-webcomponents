@@ -22,7 +22,7 @@ export class Gallery {
   }
 
   componentDidLoad() {
-    this.uploader.onFileAdded(() => {
+    this.uploader.on('file-added', () => {
       this.refresh();
     })
   }

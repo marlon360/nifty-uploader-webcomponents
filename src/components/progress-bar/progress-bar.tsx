@@ -31,22 +31,22 @@ export class ProgressBar {
   private createEventHandlers() {
     if (this.isTotalProgress()) {
       this.updateTotalProgress();
-      this.uploader.onFileProgress(() => {
+      this.uploader.on('file-progress', () => {
         this.hidden = false;
         this.updateTotalProgress();
       });
-      this.uploader.onFileUploadStarted(() => {
+      this.uploader.on('file-upload-started', () => {
         this.hidden = true;
       });
     } else {
       this.updateFileProgress();
-      this.uploader.onFileProgress((data) => {
+      this.uploader.on('file-progress', (data) => {
         if (data.file === this.file) {
           this.hidden = false;
           this.updateFileProgress();
         }
       });
-      this.uploader.onFileUploadStarted((data) => {
+      this.uploader.on('file-upload-started', (data) => {
         if (data.file === this.file) {
           this.hidden = true;
         }
