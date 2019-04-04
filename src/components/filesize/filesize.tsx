@@ -1,5 +1,4 @@
 import { Component, Prop } from '@stencil/core';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
 import { Units } from './Units';
 
 @Component({
@@ -9,7 +8,7 @@ import { Units } from './Units';
 })
 export class Filesize {
 
-  @Prop() file: NiftyFile;
+  @Prop() fileSize: number;
   @Prop() units: Units;
 
   private defaultUnits = {
@@ -56,7 +55,7 @@ export class Filesize {
   }
 
   render() {
-    const { formattedSize, formattedUnits } = this.formatSizeAndUnits(this.file.size, this.units);
+    const { formattedSize, formattedUnits } = this.formatSizeAndUnits(this.fileSize, this.units);
     return (
       <span>
         <span>{formattedSize}</span>

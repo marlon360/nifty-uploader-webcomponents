@@ -1,6 +1,4 @@
 import { Component, Prop } from '@stencil/core';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
-
 
 @Component({
   tag: 'nifty-filename',
@@ -9,9 +7,9 @@ import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
 })
 export class Filename {
   
-  @Prop() file: NiftyFile;
+  @Prop() fileName: string;
 
   render() {
-    return <span>{this.file.name}</span>;
+    return <span>{this.fileName}</span>;
   }
 }

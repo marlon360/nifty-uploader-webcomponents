@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { NiftyUploader } from 'nifty-uploader';
 import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
 
@@ -16,8 +16,8 @@ export class ProgressBar {
   @Prop() hideBeforeStart = false;
   @Prop() hideOnComplete = false;
 
-  private hidden: boolean;
-  private percentage = 0;
+  @State() hidden: boolean;
+  @State() percentage = 0;
 
   componentWillLoad() {
     this.hidden = this.hideBeforeStart;
@@ -51,6 +51,11 @@ export class ProgressBar {
           this.hidden = true;
         }
       });
+      this.uploader.on('file-success', (data) => {
+        if(this.file === data.file) {
+          this.percentage = 100;
+        }
+      })
     }
   }
 

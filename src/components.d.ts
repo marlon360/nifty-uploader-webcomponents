@@ -9,6 +9,7 @@ import '@stencil/core';
 
 
 import {
+  NiftyStatus,
   NiftyUploader,
 } from 'nifty-uploader';
 import {
@@ -55,18 +56,18 @@ export namespace Components {
   }
 
   interface NiftyFilename {
-    'file': NiftyFile;
+    'fileName': string;
   }
   interface NiftyFilenameAttributes extends StencilHTMLAttributes {
-    'file'?: NiftyFile;
+    'fileName'?: string;
   }
 
   interface NiftyFilesize {
-    'file': NiftyFile;
+    'fileSize': number;
     'units': Units;
   }
   interface NiftyFilesizeAttributes extends StencilHTMLAttributes {
-    'file'?: NiftyFile;
+    'fileSize'?: number;
     'units'?: Units;
   }
 
@@ -93,11 +94,11 @@ export namespace Components {
   }
 
   interface NiftyStatus {
-    'file': NiftyFile;
+    'fileStatus': NiftyStatus;
     'statusText': StatusText;
   }
   interface NiftyStatusAttributes extends StencilHTMLAttributes {
-    'file'?: NiftyFile;
+    'fileStatus'?: NiftyStatus;
     'statusText'?: StatusText;
   }
 }

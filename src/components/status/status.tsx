@@ -1,5 +1,4 @@
 import { Component, Prop } from '@stencil/core';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
 import { NiftyStatus } from 'nifty-uploader';
 import { StatusText } from './StatusText';
 
@@ -10,7 +9,7 @@ import { StatusText } from './StatusText';
 })
 export class Status {
   
-  @Prop() file: NiftyFile;
+  @Prop() fileStatus: NiftyStatus;
   @Prop() statusText: StatusText; 
 
   private defaultStatusText = {
@@ -33,7 +32,7 @@ export class Status {
   }
 
   mapStatusText(): string {
-    switch(this.file.status) {
+    switch(this.fileStatus) {
       case NiftyStatus.ADDED:
         return this.statusText.added;
       case NiftyStatus.CANCELED:

@@ -38,10 +38,10 @@ export class Gallery {
         <nifty-progress-bar hideBeforeStart={true} hideOnComplete={true} uploader={this.uploader} />
         {this.uploader.files.map((file) =>
           <div>
-            <nifty-filename file={file} />
-            <nifty-filesize file={file} />
+            <nifty-filename file-name={file.name} />
+            <nifty-filesize file-size={file.size} />
             <nifty-cancel-button file={file} />
-            <nifty-status file={file} />
+            <nifty-status file-status={file.status} />
             <nifty-progress-bar uploader={this.uploader} file={file} />
           </div>
         )}
