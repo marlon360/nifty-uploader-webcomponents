@@ -25,6 +25,12 @@ export class Gallery {
     this.uploader.on('file-added', () => {
       this.refresh();
     })
+    this.uploader.on('file-success', () => {
+      this.refresh();
+    })
+    this.uploader.on('file-failed', () => {
+      this.refresh();
+    })
   }
 
   private refresh() {
@@ -43,6 +49,7 @@ export class Gallery {
             <nifty-cancel-button file={file} />
             <nifty-status file-status={file.status} />
             <nifty-progress-bar uploader={this.uploader} file={file} />
+            <nifty-thumbnail file={file} />
           </div>
         )}
       </nifty-drop-zone>

@@ -101,6 +101,13 @@ export namespace Components {
     'fileStatus'?: NiftyStatus;
     'statusText'?: StatusText;
   }
+
+  interface NiftyThumbnail {
+    'file': NiftyFile;
+  }
+  interface NiftyThumbnailAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+  }
 }
 
 declare global {
@@ -113,6 +120,7 @@ declare global {
     'NiftyGallery': Components.NiftyGallery;
     'NiftyProgressBar': Components.NiftyProgressBar;
     'NiftyStatus': Components.NiftyStatus;
+    'NiftyThumbnail': Components.NiftyThumbnail;
   }
 
   interface StencilIntrinsicElements {
@@ -124,6 +132,7 @@ declare global {
     'nifty-gallery': Components.NiftyGalleryAttributes;
     'nifty-progress-bar': Components.NiftyProgressBarAttributes;
     'nifty-status': Components.NiftyStatusAttributes;
+    'nifty-thumbnail': Components.NiftyThumbnailAttributes;
   }
 
 
@@ -175,6 +184,12 @@ declare global {
     new (): HTMLNiftyStatusElement;
   };
 
+  interface HTMLNiftyThumbnailElement extends Components.NiftyThumbnail, HTMLStencilElement {}
+  var HTMLNiftyThumbnailElement: {
+    prototype: HTMLNiftyThumbnailElement;
+    new (): HTMLNiftyThumbnailElement;
+  };
+
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
@@ -184,6 +199,7 @@ declare global {
     'nifty-gallery': HTMLNiftyGalleryElement
     'nifty-progress-bar': HTMLNiftyProgressBarElement
     'nifty-status': HTMLNiftyStatusElement
+    'nifty-thumbnail': HTMLNiftyThumbnailElement
   }
 
   interface ElementTagNameMap {
@@ -195,6 +211,7 @@ declare global {
     'nifty-gallery': HTMLNiftyGalleryElement;
     'nifty-progress-bar': HTMLNiftyProgressBarElement;
     'nifty-status': HTMLNiftyStatusElement;
+    'nifty-thumbnail': HTMLNiftyThumbnailElement;
   }
 
 
