@@ -104,9 +104,14 @@ export namespace Components {
 
   interface NiftyThumbnail {
     'file': NiftyFile;
+    'options': { width?: number, height?: number, maxWidth?: number, maxHeight?: number, timeout?: number };
+    'thumbnailUrl': string;
   }
   interface NiftyThumbnailAttributes extends StencilHTMLAttributes {
     'file'?: NiftyFile;
+    'onThumbnailGenerated'?: (event: CustomEvent) => void;
+    'options'?: { width?: number, height?: number, maxWidth?: number, maxHeight?: number, timeout?: number };
+    'thumbnailUrl'?: string;
   }
 }
 

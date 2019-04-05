@@ -49,7 +49,10 @@ export class Gallery {
             <nifty-cancel-button file={file} />
             <nifty-status file-status={file.status} />
             <nifty-progress-bar uploader={this.uploader} file={file} />
-            <nifty-thumbnail file={file} />
+            <nifty-thumbnail file={file} options={{maxWidth: 500}}>
+              <h2 slot="loading">The Thumbnail is loading</h2>
+              <h2 slot="placeholder">The Thumbnail cannot be created</h2>
+            </nifty-thumbnail>
           </div>
         )}
       </nifty-drop-zone>
