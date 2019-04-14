@@ -1,12 +1,15 @@
 export interface StatusText {
     added: string;
     canceled: string;
-    error: string;
     rejected: string;
     pending_retry: string;
-    success: string;
+    successfully_completed: string;
+    unsuccessfully_completed: string;
     uploading: string;
+    succeeded_uploading: string;
+    failed_uploading: string;
     processing: string;
-    processed: string;
+    accepted: string;
     queued: string;
+    finalizing: string;
 }

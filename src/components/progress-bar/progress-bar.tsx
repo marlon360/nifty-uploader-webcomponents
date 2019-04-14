@@ -51,7 +51,7 @@ export class ProgressBar {
           this.hidden = true;
         }
       });
-      this.uploader.on('file-success', (data) => {
+      this.uploader.on('file-upload-succeeded', (data) => {
         if(this.file === data.file) {
           this.percentage = 100;
         }
@@ -65,7 +65,7 @@ export class ProgressBar {
 
   private updateFileProgress() {
     this.percentage = this.file.getProgress() * 100;
-    if (this.hideOnComplete && this.file.isComplete()) {
+    if (this.hideOnComplete && this.file.isUploadComplete()) {
       this.hidden = true;
     }
   }

@@ -8,51 +8,62 @@ import { StatusText } from './StatusText';
   shadow: true
 })
 export class Status {
-  
-  @Prop() fileStatus: NiftyStatus;
-  @Prop() statusText: StatusText; 
 
-  private defaultStatusText = {
+  @Prop() fileStatus: NiftyStatus;
+  @Prop() statusText: StatusText;
+
+  private defaultStatusText: StatusText = {
     added: "added",
     canceled: "canceled",
-    error: "failed",
     rejected: "rejected",
     pending_retry: "waiting for retry",
-    success: "successfully uploaded",
+    succeeded_uploading: "successfully uploaded",
+    failed_uploading: "uploading failed",
     uploading: "uploading",
     processing: "processing",
-    processed: "processed",
-    queued: "queued"
+    accepted: "accepted",
+    queued: "queued",
+    successfully_completed: "success",
+    unsuccessfully_completed: "error",
+    finalizing: "finalizing"
   };
 
   constructor() {
-    if(!this.statusText) {
+    if (!this.statusText) {
       this.statusText = this.defaultStatusText;
     }
   }
 
   mapStatusText(): string {
-    switch(this.fileStatus) {
+    switch (this.fileStatus) {
       case NiftyStatus.ADDED:
         return this.statusText.added;
       case NiftyStatus.CANCELED:
         return this.statusText.canceled;
-      case NiftyStatus.ERROR:
-        return this.statusText.error;
+      case NiftyStatus.SUCCESSFULLY_COMPLETED:
+        return this.statusText.successfully_completed;
+      case NiftyStatus.UNSUCCESSFULLY_COMPLETED:
+        return this.statusText.unsuccessfully_completed;
       case NiftyStatus.PENDING_RETRY:
         return this.statusText.pending_retry;
-      case NiftyStatus.PROCESSED:
-        return this.statusText.processed;
+      case NiftyStatus.ACCEPTED:
+        return this.statusText.accepted;
       case NiftyStatus.PROCESSING:
         return this.statusText.processing;
       case NiftyStatus.QUEUED:
         return this.statusText.queued;
       case NiftyStatus.REJECTED:
         return this.statusText.rejected;
-      case NiftyStatus.SUCCESS:
-        return this.statusText.success;
+      case NiftyStatus.SUCCESSFULLY_COMPLETED:
+        return this.statusText.successfully_completed;
       case NiftyStatus.UPLOADING:
         return this.statusText.uploading;
+      case NiftyStatus.SUCCEEDED_UPLOADING:
+        return this.statusText.succeeded_uploading;
+      case NiftyStatus.FAILED_UPLOADING:
+        return this.statusText.failed_uploading;
+      case NiftyStatus.FINALIZING:
+        return this.statusText.finalizing;
       default:
         return "";
     }
@@ -60,9 +71,9 @@ export class Status {
 
   render() {
     return (
-    <span>
-      {this.mapStatusText()}
-    </span>
+      <span>
+        {this.mapStatusText()}
+      </span>
     );
   }
 }
