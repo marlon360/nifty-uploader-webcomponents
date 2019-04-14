@@ -12,12 +12,14 @@ export class AddButton {
    * The uploader
    */
   @Prop() uploader: NiftyUploader;
+  @Prop() multiple: boolean = true;
 
   button: HTMLButtonElement;
 
 
   openFileBrowser() {
     let input = document.createElement('input');
+    input.multiple = this.multiple;
     input.type = 'file';
     input.onchange = () => {
       console.log("added file");
