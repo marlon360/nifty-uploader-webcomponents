@@ -9,6 +9,7 @@
 
 | Property   | Attribute | Description | Type            | Default     |
 | ---------- | --------- | ----------- | --------------- | ----------- |
+| `units`    | --        |             | `Units`         | `undefined` |
 | `uploader` | --        |             | `NiftyUploader` | `undefined` |
 
 

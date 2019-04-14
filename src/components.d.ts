@@ -16,7 +16,7 @@ import {
 } from 'nifty-uploader/lib/types/NiftyFile';
 import {
   Units,
-} from './components/filesize/Units';
+} from './utils/Units';
 import {
   INiftyOptionsParameter,
 } from 'nifty-uploader/lib/types/NiftyOptions';
@@ -62,9 +62,11 @@ export namespace Components {
   }
 
   interface NiftyFilesizeLimit {
+    'units': Units;
     'uploader': NiftyUploader;
   }
   interface NiftyFilesizeLimitAttributes extends StencilHTMLAttributes {
+    'units'?: Units;
     'uploader'?: NiftyUploader;
   }
 
