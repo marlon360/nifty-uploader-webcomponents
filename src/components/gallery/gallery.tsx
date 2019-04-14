@@ -25,6 +25,9 @@ export class Gallery {
     this.uploader.on('file-added', () => {
       this.refresh();
     })
+    this.uploader.on('file-queued', () => {
+      this.refresh();
+    })
     this.uploader.on('processing-failed', (data) => {
       alert(data.error);
     })

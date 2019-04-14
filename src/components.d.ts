@@ -28,12 +28,14 @@ import {
 export namespace Components {
 
   interface NiftyAddButton {
+    'multiple': boolean;
     /**
     * The uploader
     */
     'uploader': NiftyUploader;
   }
   interface NiftyAddButtonAttributes extends StencilHTMLAttributes {
+    'multiple'?: boolean;
     /**
     * The uploader
     */
