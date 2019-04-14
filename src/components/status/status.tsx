@@ -1,6 +1,7 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Element } from '@stencil/core';
 import { NiftyStatus } from 'nifty-uploader';
 import { StatusText } from './StatusText';
+import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
 
 @Component({
   tag: 'nifty-status',
@@ -9,7 +10,9 @@ import { StatusText } from './StatusText';
 })
 export class Status {
 
-  @Prop() fileStatus: NiftyStatus;
+  @Element() el!: HTMLStencilElement;
+
+  @Prop() file: NiftyFile;
   @Prop() statusText: StatusText;
 
   private defaultStatusText: StatusText = {
@@ -34,8 +37,17 @@ export class Status {
     }
   }
 
+  componentWillLoad() {
+    this.file.on('status-changed',() => this.statusChanged());
+  }
+
+  componentDidUnload() {
+    this.file.off('status-changed', () => this.statusChanged());
+  }
+  
+
   mapStatusText(): string {
-    switch (this.fileStatus) {
+    switch (this.file.status) {
       case NiftyStatus.ADDED:
         return this.statusText.added;
       case NiftyStatus.CANCELED:
@@ -76,4 +88,9 @@ export class Status {
       </span>
     );
   }
+
+  private statusChanged() {
+    this.el.forceUpdate();
+  }
+
 }

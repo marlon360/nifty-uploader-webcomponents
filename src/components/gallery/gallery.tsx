@@ -50,7 +50,7 @@ export class Gallery {
             <nifty-filename file-name={file.name} />
             <nifty-filesize file-size={file.size} />
             <nifty-cancel-button file={file} />
-            <nifty-status file-status={file.status} />
+            <nifty-status file={file} />
             <nifty-progress-bar uploader={this.uploader} file={file} />
             <nifty-thumbnail file={file} options={{maxWidth: 500}}>
               <h2 slot="loading">The Thumbnail is loading</h2>
