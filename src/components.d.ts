@@ -61,6 +61,13 @@ export namespace Components {
     'fileName'?: string;
   }
 
+  interface NiftyFilesizeLimit {
+    'uploader': NiftyUploader;
+  }
+  interface NiftyFilesizeLimitAttributes extends StencilHTMLAttributes {
+    'uploader'?: NiftyUploader;
+  }
+
   interface NiftyFilesize {
     'fileSize': number;
     'units': Units;
@@ -120,6 +127,7 @@ declare global {
     'NiftyCancelButton': Components.NiftyCancelButton;
     'NiftyDropZone': Components.NiftyDropZone;
     'NiftyFilename': Components.NiftyFilename;
+    'NiftyFilesizeLimit': Components.NiftyFilesizeLimit;
     'NiftyFilesize': Components.NiftyFilesize;
     'NiftyGallery': Components.NiftyGallery;
     'NiftyProgressBar': Components.NiftyProgressBar;
@@ -132,6 +140,7 @@ declare global {
     'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
     'nifty-drop-zone': Components.NiftyDropZoneAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
+    'nifty-filesize-limit': Components.NiftyFilesizeLimitAttributes;
     'nifty-filesize': Components.NiftyFilesizeAttributes;
     'nifty-gallery': Components.NiftyGalleryAttributes;
     'nifty-progress-bar': Components.NiftyProgressBarAttributes;
@@ -162,6 +171,12 @@ declare global {
   var HTMLNiftyFilenameElement: {
     prototype: HTMLNiftyFilenameElement;
     new (): HTMLNiftyFilenameElement;
+  };
+
+  interface HTMLNiftyFilesizeLimitElement extends Components.NiftyFilesizeLimit, HTMLStencilElement {}
+  var HTMLNiftyFilesizeLimitElement: {
+    prototype: HTMLNiftyFilesizeLimitElement;
+    new (): HTMLNiftyFilesizeLimitElement;
   };
 
   interface HTMLNiftyFilesizeElement extends Components.NiftyFilesize, HTMLStencilElement {}
@@ -199,6 +214,7 @@ declare global {
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
     'nifty-drop-zone': HTMLNiftyDropZoneElement
     'nifty-filename': HTMLNiftyFilenameElement
+    'nifty-filesize-limit': HTMLNiftyFilesizeLimitElement
     'nifty-filesize': HTMLNiftyFilesizeElement
     'nifty-gallery': HTMLNiftyGalleryElement
     'nifty-progress-bar': HTMLNiftyProgressBarElement
@@ -211,6 +227,7 @@ declare global {
     'nifty-cancel-button': HTMLNiftyCancelButtonElement;
     'nifty-drop-zone': HTMLNiftyDropZoneElement;
     'nifty-filename': HTMLNiftyFilenameElement;
+    'nifty-filesize-limit': HTMLNiftyFilesizeLimitElement;
     'nifty-filesize': HTMLNiftyFilesizeElement;
     'nifty-gallery': HTMLNiftyGalleryElement;
     'nifty-progress-bar': HTMLNiftyProgressBarElement;

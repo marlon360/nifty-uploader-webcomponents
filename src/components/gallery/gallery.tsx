@@ -52,6 +52,7 @@ export class Gallery {
             </nifty-thumbnail>
           </div>
         )}
+      <nifty-filesize-limit uploader={this.uploader} />
       </nifty-drop-zone>
     </div>;
   }
