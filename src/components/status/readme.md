@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute | Description | Type         | Default     |
-| ------------ | --------- | ----------- | ------------ | ----------- |
-| `file`       | --        |             | `NiftyFile`  | `undefined` |
-| `statusText` | --        |             | `StatusText` | `undefined` |
+| Property     | Attribute | Description | Type            | Default     |
+| ------------ | --------- | ----------- | --------------- | ----------- |
+| `file`       | --        |             | `NiftyFile<{}>` | `undefined` |
+| `statusText` | --        |             | `StatusText`    | `undefined` |
 
 
 ----------------------------------------------

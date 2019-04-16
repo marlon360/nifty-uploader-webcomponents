@@ -35,7 +35,7 @@ export class FilesizeLimit {
 
 
   private createEventHandlers() {
-    this.uploader.on('file-added', () => {
+    this.uploader.on('file-accepted', () => {
       this.calculatePercentage();
     });
     this.uploader.on('file-upload-started', () => {

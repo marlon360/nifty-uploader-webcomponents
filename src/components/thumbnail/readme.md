@@ -9,7 +9,7 @@
 
 | Property       | Attribute       | Description | Type                                                                                            | Default     |
 | -------------- | --------------- | ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
-| `file`         | --              |             | `NiftyFile`                                                                                     | `undefined` |
+| `file`         | --              |             | `NiftyFile<{}>`                                                                                 | `undefined` |
 | `options`      | --              |             | `{ width?: number; height?: number; maxWidth?: number; maxHeight?: number; timeout?: number; }` | `undefined` |
 | `thumbnailUrl` | `thumbnail-url` |             | `string`                                                                                        | `undefined` |
 

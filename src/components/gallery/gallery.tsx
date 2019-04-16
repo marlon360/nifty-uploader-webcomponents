@@ -22,13 +22,13 @@ export class Gallery {
   }
 
   componentDidLoad() {
-    this.uploader.on('file-added', () => {
+    this.uploader.on('file-accepted', () => {
       this.refresh();
     })
     this.uploader.on('file-queued', () => {
       this.refresh();
     })
-    this.uploader.on('processing-failed', (data) => {
+    this.uploader.on('file-rejected', (data) => {
       alert(data.error);
     })
   }
