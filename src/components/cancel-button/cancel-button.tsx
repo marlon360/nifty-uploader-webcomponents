@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
+import { NiftyFile } from '@nifty-uploader/core/lib/types/NiftyFile';
 
 @Component({
   tag: 'nifty-cancel-button',

@@ -1,6 +1,6 @@
 {
-  "name": "nifty-uploader-webcomponents",
-  "version": "0.0.6",
+  "name": "@nifty-uploader/web-components",
+  "version": "0.0.7",
   "description": "Webcomponents for nifty-uploader",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -18,7 +18,7 @@
     "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
   },
   "dependencies": {
-    "nifty-uploader": "^1.0.0-beta.12"
+    "@nifty-uploader/core": "^1.0.0-beta.12"
   },
   "devDependencies": {
     "@stencil/core": "~0.18.1"

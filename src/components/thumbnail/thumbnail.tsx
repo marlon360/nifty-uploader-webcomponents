@@ -1,5 +1,5 @@
 import { Component, Prop, State, EventEmitter, Event } from '@stencil/core';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
+import { NiftyFile } from '@nifty-uploader/core/lib/types/NiftyFile';
 import { ThumbnailGenerator } from './ThumbnailGenerator';
 
 @Component({

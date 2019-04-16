@@ -1,6 +1,6 @@
 import { Component, Prop, State } from '@stencil/core';
-import { NiftyUploader } from 'nifty-uploader';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
+import { NiftyUploader } from '@nifty-uploader/core';
+import { NiftyFile } from '@nifty-uploader/core/lib/types/NiftyFile';
 
 
 @Component({

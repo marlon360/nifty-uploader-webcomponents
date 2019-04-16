@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { NiftyUploader } from 'nifty-uploader';
+import { NiftyUploader } from '@nifty-uploader/core';
 
 
 @Component({

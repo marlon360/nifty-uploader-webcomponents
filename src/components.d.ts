@@ -10,16 +10,16 @@ import '@stencil/core';
 
 import {
   NiftyUploader,
-} from 'nifty-uploader';
+} from '@nifty-uploader/core';
 import {
   NiftyFile,
-} from 'nifty-uploader/lib/types/NiftyFile';
+} from '@nifty-uploader/core/lib/types/NiftyFile';
 import {
   Units,
 } from './utils/Units';
 import {
   INiftyOptionsParameter,
-} from 'nifty-uploader/lib/types/NiftyOptions';
+} from '@nifty-uploader/core/lib/types/NiftyOptions';
 import {
   StatusText,
 } from './components/status/StatusText';

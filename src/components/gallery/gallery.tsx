@@ -1,6 +1,6 @@
 import { Component, Prop, Element } from '@stencil/core';
-import { NiftyUploader } from 'nifty-uploader';
-import { INiftyOptionsParameter } from 'nifty-uploader/lib/types/NiftyOptions';
+import { NiftyUploader } from '@nifty-uploader/core';
+import { INiftyOptionsParameter } from '@nifty-uploader/core/lib/types/NiftyOptions';
 
 
 @Component({

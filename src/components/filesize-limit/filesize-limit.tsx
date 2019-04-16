@@ -1,6 +1,6 @@
 import { Component, Prop, State } from '@stencil/core';
-import { NiftyUploader } from 'nifty-uploader';
 import { Units } from '../../utils/Units';
+import { NiftyUploader } from '@nifty-uploader/core';
 import { formatSizeAndUnits } from '../../utils/formatSizeAndUnits';
 
 @Component({

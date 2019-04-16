@@ -1,7 +1,7 @@
 import { Component, Prop, Element } from '@stencil/core';
-import { NiftyStatus } from 'nifty-uploader';
+import { NiftyStatus } from '@nifty-uploader/core';
+import { NiftyFile } from '@nifty-uploader/core/lib/types/NiftyFile';
 import { StatusText } from './StatusText';
-import { NiftyFile } from 'nifty-uploader/lib/types/NiftyFile';
 
 @Component({
   tag: 'nifty-status',
