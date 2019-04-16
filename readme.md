@@ -6,16 +6,16 @@
 
 ### Script tag
 
-- Put the script tag `<script src='https://unpkg.com/nifty-uploader-webcomponents'></script>` in the head of your index.html
+- Put the script tag `<script src='https://unpkg.com/@nifty-uploader/web-components'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
-- Run `npm install nifty-uploader-webcomponents --save`
-- Put the script tag `<script src='node_modules/nifty-uploader-webcomponents/dist/niftyuploader.js'></script>` in the head of your index.html
+- Run `npm install @nifty-uploader/web-components --save`
+- Put the script tag `<script src='node_modules/@nifty-uploader/web-components/dist/niftyuploader.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Angular
-- Run `npm install nifty-uploader-webcomponents --save`
+- Run `npm install @nifty-uploader/web-components --save`
 - Include the `CUSTOM_ELEMENTS_SCHEMA` in the modules that use the components
 - Call `defineCustomElements(window)` from `main.ts` (or some other appropriate place)
 
@@ -44,7 +44,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import { defineCustomElements } from 'nifty-uploader-webcomponents/dist/loader'
+import { defineCustomElements } from '@nifty-uploader/web-components/dist/loader'
 
 if (environment.production) {
   enableProdMode();
