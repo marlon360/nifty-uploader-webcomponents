@@ -75,6 +75,20 @@ nifty-add-button  button:hover {
     cursor: pointer;
 }
 
+nifty-cancel-all-button  button {
+    color: #F07469;
+    border: 2px solid #F07469;
+    font-size: 16px;
+    background: white;
+    border-radius: 4px;
+    padding: 0.6em 1.6em;
+}
+nifty-cancel-all-button  button:hover {
+    background: rgb(228, 100, 88);
+    color: white;
+    cursor: pointer;
+}
+
 .nifty-files-wrapper {
     display: flex;
     flex-direction: row;

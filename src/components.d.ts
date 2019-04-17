@@ -42,6 +42,13 @@ export namespace Components {
     'uploader'?: NiftyUploader;
   }
 
+  interface NiftyCancelAllButton {
+    'uploader': NiftyUploader;
+  }
+  interface NiftyCancelAllButtonAttributes extends StencilHTMLAttributes {
+    'uploader'?: NiftyUploader;
+  }
+
   interface NiftyCancelButton {
     'file': NiftyFile;
   }
@@ -135,6 +142,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'NiftyAddButton': Components.NiftyAddButton;
+    'NiftyCancelAllButton': Components.NiftyCancelAllButton;
     'NiftyCancelButton': Components.NiftyCancelButton;
     'NiftyDeleteButton': Components.NiftyDeleteButton;
     'NiftyDropZone': Components.NiftyDropZone;
@@ -149,6 +157,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'nifty-add-button': Components.NiftyAddButtonAttributes;
+    'nifty-cancel-all-button': Components.NiftyCancelAllButtonAttributes;
     'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
     'nifty-delete-button': Components.NiftyDeleteButtonAttributes;
     'nifty-drop-zone': Components.NiftyDropZoneAttributes;
@@ -166,6 +175,12 @@ declare global {
   var HTMLNiftyAddButtonElement: {
     prototype: HTMLNiftyAddButtonElement;
     new (): HTMLNiftyAddButtonElement;
+  };
+
+  interface HTMLNiftyCancelAllButtonElement extends Components.NiftyCancelAllButton, HTMLStencilElement {}
+  var HTMLNiftyCancelAllButtonElement: {
+    prototype: HTMLNiftyCancelAllButtonElement;
+    new (): HTMLNiftyCancelAllButtonElement;
   };
 
   interface HTMLNiftyCancelButtonElement extends Components.NiftyCancelButton, HTMLStencilElement {}
@@ -230,6 +245,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
+    'nifty-cancel-all-button': HTMLNiftyCancelAllButtonElement
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
     'nifty-delete-button': HTMLNiftyDeleteButtonElement
     'nifty-drop-zone': HTMLNiftyDropZoneElement
@@ -244,6 +260,7 @@ declare global {
 
   interface ElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement;
+    'nifty-cancel-all-button': HTMLNiftyCancelAllButtonElement;
     'nifty-cancel-button': HTMLNiftyCancelButtonElement;
     'nifty-delete-button': HTMLNiftyDeleteButtonElement;
     'nifty-drop-zone': HTMLNiftyDropZoneElement;

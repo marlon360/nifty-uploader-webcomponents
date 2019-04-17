@@ -65,6 +65,7 @@ export class Gallery {
       </nifty-drop-zone>
       <div class="overlay">
         <nifty-add-button uploader={this.uploader} />
+        <nifty-cancel-all-button uploader={this.uploader} />
         <nifty-progress-bar hideBeforeStart={true} hideOnComplete={true} uploader={this.uploader} />
         <nifty-filesize-limit uploader={this.uploader} />
       </div>
