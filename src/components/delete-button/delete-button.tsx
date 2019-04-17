@@ -2,20 +2,16 @@ import { Component, Prop, State } from '@stencil/core';
 import { NiftyFile } from '@nifty-uploader/core/lib/types/NiftyFile';
 
 @Component({
-  tag: 'nifty-cancel-button',
-  styleUrl: 'cancel-button.css',
+  tag: 'nifty-delete-button',
+  styleUrl: 'delete-button.css',
   shadow: true
 })
-export class CancelButton {
+export class DeleteButton {
   
   @Prop() file: NiftyFile;
-  @State() hidden = false;
+  @State() hidden = true;
 
-  private defaultCancelText = "Cancel";
-
-  cancelButtonClicked() {
-    this.file.cancel();
-  }
+  private defaultDeleteText = "Delete";
 
   componentWillLoad() {
     this.file.on('status-changed', () => this.onStatusChanged());
@@ -25,8 +21,12 @@ export class CancelButton {
     this.file.off('status-changed', () => this.onStatusChanged());
   }
 
+  deleteButtonClicked() {
+    this.file.delete();
+  }
+
   onStatusChanged() {
-    if(!this.file.isDeletable()) {
+    if(this.file.isDeletable()) {
       this.hidden = false;
     } else {
       this.hidden = true;
@@ -35,8 +35,8 @@ export class CancelButton {
 
   render() {
     return (
-    <button hidden={this.hidden} onClick={() => this.cancelButtonClicked()}>
-      <slot>{this.defaultCancelText}</slot>
+    <button hidden={this.hidden} onClick={() => this.deleteButtonClicked()}>
+      <slot>{this.defaultDeleteText}</slot>
     </button>
     );
   }

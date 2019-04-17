@@ -49,6 +49,13 @@ export namespace Components {
     'file'?: NiftyFile;
   }
 
+  interface NiftyDeleteButton {
+    'file': NiftyFile;
+  }
+  interface NiftyDeleteButtonAttributes extends StencilHTMLAttributes {
+    'file'?: NiftyFile;
+  }
+
   interface NiftyDropZone {
     'uploader': NiftyUploader;
   }
@@ -129,6 +136,7 @@ declare global {
   interface StencilElementInterfaces {
     'NiftyAddButton': Components.NiftyAddButton;
     'NiftyCancelButton': Components.NiftyCancelButton;
+    'NiftyDeleteButton': Components.NiftyDeleteButton;
     'NiftyDropZone': Components.NiftyDropZone;
     'NiftyFilename': Components.NiftyFilename;
     'NiftyFilesizeLimit': Components.NiftyFilesizeLimit;
@@ -142,6 +150,7 @@ declare global {
   interface StencilIntrinsicElements {
     'nifty-add-button': Components.NiftyAddButtonAttributes;
     'nifty-cancel-button': Components.NiftyCancelButtonAttributes;
+    'nifty-delete-button': Components.NiftyDeleteButtonAttributes;
     'nifty-drop-zone': Components.NiftyDropZoneAttributes;
     'nifty-filename': Components.NiftyFilenameAttributes;
     'nifty-filesize-limit': Components.NiftyFilesizeLimitAttributes;
@@ -163,6 +172,12 @@ declare global {
   var HTMLNiftyCancelButtonElement: {
     prototype: HTMLNiftyCancelButtonElement;
     new (): HTMLNiftyCancelButtonElement;
+  };
+
+  interface HTMLNiftyDeleteButtonElement extends Components.NiftyDeleteButton, HTMLStencilElement {}
+  var HTMLNiftyDeleteButtonElement: {
+    prototype: HTMLNiftyDeleteButtonElement;
+    new (): HTMLNiftyDeleteButtonElement;
   };
 
   interface HTMLNiftyDropZoneElement extends Components.NiftyDropZone, HTMLStencilElement {}
@@ -216,6 +231,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement
     'nifty-cancel-button': HTMLNiftyCancelButtonElement
+    'nifty-delete-button': HTMLNiftyDeleteButtonElement
     'nifty-drop-zone': HTMLNiftyDropZoneElement
     'nifty-filename': HTMLNiftyFilenameElement
     'nifty-filesize-limit': HTMLNiftyFilesizeLimitElement
@@ -229,6 +245,7 @@ declare global {
   interface ElementTagNameMap {
     'nifty-add-button': HTMLNiftyAddButtonElement;
     'nifty-cancel-button': HTMLNiftyCancelButtonElement;
+    'nifty-delete-button': HTMLNiftyDeleteButtonElement;
     'nifty-drop-zone': HTMLNiftyDropZoneElement;
     'nifty-filename': HTMLNiftyFilenameElement;
     'nifty-filesize-limit': HTMLNiftyFilesizeLimitElement;

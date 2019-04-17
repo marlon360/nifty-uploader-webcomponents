@@ -28,6 +28,9 @@ export class Gallery {
     this.uploader.on('file-queued', () => {
       this.refresh();
     })
+    this.uploader.on('file-canceled', () => {
+      this.refresh();
+    })
     this.uploader.on('file-rejected', (data) => {
       alert(data.error);
     })
@@ -53,6 +56,7 @@ export class Gallery {
               <nifty-progress-bar uploader={this.uploader} hideBeforeStart={false} file={file} />
               <nifty-filesize file-size={file.size} />
               <nifty-cancel-button file={file} />
+              <nifty-delete-button file={file} />
               <nifty-status file={file} />
 
             </div>
