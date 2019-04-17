@@ -5,7 +5,7 @@ import { NiftyUploader } from '@nifty-uploader/core';
 @Component({
   tag: 'nifty-add-button',
   styleUrl: 'add-button.css',
-  shadow: true
+  shadow: false
 })
 export class AddButton {
   /**
@@ -31,6 +31,8 @@ export class AddButton {
   }
 
   render() {
-    return <button onClick={ () => this.openFileBrowser()} ref={(el) => this.button = el as HTMLButtonElement}>Add files</button>;
+    return (
+    <button onClick={ () => this.openFileBrowser()} ref={(el) => this.button = el as HTMLButtonElement}>Add files</button>
+    );
   }
 }

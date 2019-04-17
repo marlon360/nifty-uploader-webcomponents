@@ -72,7 +72,7 @@ export class ProgressBar {
 
   render() {
     return (
-      <div class="nifty-progress-bar-wrapper" hidden={this.hidden}>
+      <div class="nifty-progress-bar-wrapper" >
         <div class="nifty-progress-bar"
           aria-valuemax='100'
           aria-valuemin='0'

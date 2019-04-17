@@ -1,19 +1,108 @@
-.nifty-progress-bar-wrapper {
-    height: 10px;
-    width: 100px;
-}
-.nifty-progress-bar {
-    background: rgb(61, 226, 61);
+.nifty-gallery {
+    background: white;
+    max-width: 1024px;
+    min-height: 400px;
+    margin: 20px auto 0 auto;
+    display: block;
+    box-shadow: 0 2px 4px 0 rgba(103,103,103,0.50);
+    border-radius: 18px;
+    position: relative;
 }
 
 .nifty-gallery-drop-zone {
     display: block;
-    border-radius: 6px;
-    background-color: #FAFAFA;
-    min-height: 300px;
-    overflow-y: hidden;
-    padding: 1em;
-    position: relative;
 
-    border: 3px dashed rgb(48, 154, 240);
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    margin: auto;
+    padding: 20px;
+    position: absolute;
+
+    border-radius: 18px;
+    background-color: transparent;
+    
+    overflow-y: hidden;
+
+    border: 2px dashed rgb(221, 221, 221);
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 30px;
+    height: 50px;
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 18px 18px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.nifty-progress-bar-wrapper, .nifty-filesize-limit-wrapper {
+    height: 20px;
+    width: 200px;
+    background: #F0F0F0;
+    border-radius: 2px;
+    margin: 0;
+}
+.nifty-progress-bar, .nifty-filesize-limit-bar {
+    border-radius: 2px;
+    background: #F07469;
+}
+
+nifty-filesize-limit span {
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #4e4e4e;
+}
+
+nifty-add-button  button {
+    background: #F07469;
+    font-size: 16px;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 0.6em 1.6em;
+}
+nifty-add-button  button:hover {
+    background: rgb(228, 100, 88);
+    cursor: pointer;
+}
+
+.nifty-files-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.nifty-file {
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+    width: 200px;
+    height: 175px;
+
+    margin: 0 30px 30px 0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.nifty-file .thumb-wrapper {
+    height: 100px;
+}
+
+nifty-thumbnail img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.nifty-file .nifty-progress-bar-wrapper {
+    height: 6px;
 }

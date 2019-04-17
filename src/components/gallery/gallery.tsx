@@ -38,25 +38,32 @@ export class Gallery {
   }
 
   render() {
-    return <div>
+    return <div class="nifty-gallery">
       <nifty-drop-zone class="nifty-gallery-drop-zone" uploader={this.uploader}>
+        <div class="nifty-files-wrapper">
+          {this.uploader.files.map((file) =>
+            <div class="nifty-file">
+              <div class="thumb-wrapper">
+                <nifty-thumbnail file={file} options={{ maxWidth: 500 }}>
+                  <h2 slot="loading">The Thumbnail is loading</h2>
+                  <h2 slot="placeholder">The Thumbnail cannot be created</h2>
+                </nifty-thumbnail>
+              </div>
+              <nifty-filename file-name={file.name} />
+              <nifty-progress-bar uploader={this.uploader} hideBeforeStart={false} file={file} />
+              <nifty-filesize file-size={file.size} />
+              <nifty-cancel-button file={file} />
+              <nifty-status file={file} />
+
+            </div>
+          )}
+        </div>
+      </nifty-drop-zone>
+      <div class="overlay">
         <nifty-add-button uploader={this.uploader} />
         <nifty-progress-bar hideBeforeStart={true} hideOnComplete={true} uploader={this.uploader} />
-        {this.uploader.files.map((file) =>
-          <div>
-            <nifty-filename file-name={file.name} />
-            <nifty-filesize file-size={file.size} />
-            <nifty-cancel-button file={file} />
-            <nifty-status file={file} />
-            <nifty-progress-bar uploader={this.uploader} file={file} />
-            <nifty-thumbnail file={file} options={{maxWidth: 500}}>
-              <h2 slot="loading">The Thumbnail is loading</h2>
-              <h2 slot="placeholder">The Thumbnail cannot be created</h2>
-            </nifty-thumbnail>
-          </div>
-        )}
-      <nifty-filesize-limit uploader={this.uploader} />
-      </nifty-drop-zone>
+        <nifty-filesize-limit uploader={this.uploader} />
+      </div>
     </div>;
   }
 }

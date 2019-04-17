@@ -49,7 +49,10 @@ export class Thumbnail {
 
     // if a thumbnail url is available
     if (this.thumbnailUrl != null) {
-      content = <img src={this.thumbnailUrl} />;
+      let styles = {
+        "background-image": "url('"+this.thumbnailUrl+"')"
+      }
+      content = <div class="thumb" style={styles} ></div>;
     }
     // if a thumbnail url is not available and a thumbnail is generating
     else if (this.loading && this.thumbnailUrl == null) {
